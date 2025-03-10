@@ -1,0 +1,15 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+class DigitClassificationModel(nn.Module):
+    def __init__(self):
+        super(DigitClassificationModel, self).__init__()
+        self.fc1 = nn.Linear(784, 128)
+        self.fc2 = nn.Linear(128, 64)
+        self.fc3 = nn.Linear(64, 10)
+
+    def forward(self, x):
+        x = torch.relu(self.fc1(x))
+        x = torch.relu(self.fc2(x))
+        return self.fc3(x) 
