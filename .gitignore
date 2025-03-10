@@ -1,0 +1,45 @@
+# Ignorar archivos innecesarios en Git
+
+# Archivos del sistema
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.DS_Store
+
+# Configuración de entornos virtuales
+venv/
+.env
+*.env
+
+# Archivos de dependencias y caché
+*.log
+*.sqlite3
+
+# Modelos y datos temporales
+*.h5
+*.pt
+*.pth
+*.onnx
+
+# Carpeta de datasets descargados (opcional)
+datasets/
+data/
+
+# Configuración específica del usuario
+.vscode/
+.idea/
+*.iml
+*.swp
+
+# Archivos de pruebas y validaciones
+autograder-results/
+
+# Archivos de salida
+debug/
+outputs/
+results/
+
+# Ignorar archivos grandes generados en entrenamiento
+checkpoints/
+weights/

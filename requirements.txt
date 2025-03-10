@@ -1,0 +1,13 @@
+# Dependencias del proyecto
+
+# Librerías esenciales
+numpy
+matplotlib
+torch
+torchvision
+torchsummary
+
+# Librerías opcionales para debugging y logging
+ipython
+jupyter
+tqdm
