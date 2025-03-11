@@ -9,14 +9,13 @@ def train_model(epochs=5, learning_rate=0.001, batch_size=64):
     train_loader, _ = get_dataloaders(batch_size)
     model = DigitClassificationModel()
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+    optimizer = optim.AdamW(model.parameters(), lr=learning_rate, weight_decay=1e-4)  # Cambio a AdamW
 
     for epoch in range(epochs):
         correct, total = 0, 0
         progress_bar = tqdm(train_loader, desc=f"Época {epoch+1}/{epochs}")
         for batch in progress_bar:
             x, y = batch
-            x = x.view(x.shape[0], -1) 
             optimizer.zero_grad()
             outputs = model(x)
             loss = criterion(outputs, y)

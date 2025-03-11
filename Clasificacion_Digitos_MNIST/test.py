@@ -12,7 +12,6 @@ def test_model():
     with torch.no_grad():
         for batch in test_loader:
             x, y = batch
-            x = x.view(x.shape[0], -1)
             outputs = model(x)
             _, predicted = torch.max(outputs, 1)
             total += y.size(0)
